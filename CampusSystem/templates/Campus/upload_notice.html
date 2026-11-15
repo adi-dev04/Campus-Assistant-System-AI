@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Notice</title>
+    <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <header class="not-header">
+        <h1>Upload Notice</h1>
+    </header>
+
+    <div class="not-container">
+        <form method="POST" action="{% url 'upload_notice' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Notice Title</label><br>
+            <input type="text" name="title" required><br>
+
+            <label>Select PDF</label><br>
+            <input type="file" name="file" accept=".pdf" required><br>
+
+            <button type="submit">Upload Notice</button>
+        </form>
+    </div>
+
+</body>
+</html>

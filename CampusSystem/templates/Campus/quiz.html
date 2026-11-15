@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Quiz</title>
+</head>
+<body>
+
+    <h1>Campus Assistant Quiz</h1>
+
+    {% if score != None %}
+        <h2>Your Score: {{ score }} / {{ questions|length }}</h2>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {% for q in questions %}
+            <h3>{{ forloop.counter }}. {{ q.question }}</h3>
+
+            {% for option in q.options %}
+                <label>
+                    <input type="radio"
+                           name="question{{ forloop.parentloop.counter0 }}"
+                           value="{{ option }}"
+                           required>
+                    {{ option }}
+                </label>
+                <br>
+            {% endfor %}
+
+        {% endfor %}
+
+        <br>
+        <button type="submit">Submit Quiz</button>
+    </form>
+
+</body>
+</html>

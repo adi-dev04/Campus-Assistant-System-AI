@@ -1,0 +1,53 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header class="teacher-header">
+        <h1>Teacher Dashboard</h1>
+        <p>Welcome, {{ request.POST.username }}!</p>
+    </header>
+
+    <div class="teacher-container">
+
+        <div class="teacher-card">
+            <h2>Upload Syllabus</h2>
+            <p>Upload syllabus documents for students.</p>
+            <a href="{% url 'upload_pdf' %}">Upload Syllabus</a>
+        </div>
+
+        <div class="teacher-card">
+            <h2>Upload Timetable</h2>
+            <p>Share class and examination timetables.</p>
+            <a href="{% url 'upload_timetable' %}">Upload Timetable</a>
+        </div>
+
+        <div class="teacher-card">
+            <h2>Publish Notice</h2>
+            <p>Publish important college announcements.</p>
+            <a href="{% url 'upload_notice' %}">Publish Notice</a>
+        </div>
+
+        <div class="teacher-card">
+            <h2>Manage Uploads</h2>
+            <p>View and manage your uploaded content.</p>
+            <a href="{% url 'manage_uploads' %}">Manage Content</a>
+        </div>
+        
+        <button type="submit" class="logout">
+            <a href="{% url 'index' %}">logout</a>
+        </button>
+        
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Uploads</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style6.css' %}">
+</head>
+
+<body>
+
+    <header class="manage-header">
+        <h1>MANAGE UPLOADS</h1>
+        <p>Manage your uploaded academic documents</p>
+    </header>
+
+    <main class="manage-container">
+        <div class="content-grid">
+            {% for document in documents %}
+            <div class="content-card">
+                <h2>{{ document.title }}</h2>
+                <span class="category">
+                    {{ document.category }}
+                </span>
+                <p>Subject: {{ document.subject }}</p>
+                <p>Semester: {{ document.semester }}</p>
+                <p>Academic Year: {{ document.academic_year }}</p>
+                <div class="card-buttons">
+                    <a href="{{ document.file.url }}" target="_blank" class="view-btn">
+                        View
+                    </a>
+                    <form method="POST" action="{% url 'delete_upload' document.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-btn"
+                        onclick="return confirm('Are you sure you want to delete this document?');">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% empty %}
+        <p>No documents have been uploaded yet.</p>
+        {% endfor %}
+    </div>
+</main>
+
+</body>
+</html>

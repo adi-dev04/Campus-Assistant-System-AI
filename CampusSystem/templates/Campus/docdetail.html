@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ document.title }}</title>
+</head>
+<body>
+    <h1>{{ document.title }}</h1>
+
+    <p>Subject: {{ document.subject }}</p>
+
+        <a href="{{ document.file.url }}" target="_blank">
+        Open Full PDF
+    </a>
+
+    <h2>Summary</h2>
+    <p>{{ document.summary|default:"No summary available yet." }}</p>
+
+    <h2>Extracted Text</h2>
+    <pre>{{ document.extracted_text|default:"No extracted text available yet." }}</pre>
+
+    <a href="{% url 'student_documents' %}">Back to Documents</a>
+</body>
+</html>

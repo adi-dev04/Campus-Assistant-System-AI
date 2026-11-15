@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-image: url("../img2.png");
+    background-size: cover;
+}
+h1
+{
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+
+}
+h3
+{
+    font-family: Arial, sans-serif;
+    color: #f5f5f5;
+    padding: 10px;
+}
+.container
+{
+    color: #f5f5f5;
+    height:300px;
+    width: 270px;
+    background-color: rgba(48, 8, 8, 0.7);
+    float: right;
+    border-radius: 25px;
+    margin-right: 180px;
+    margin-top: 130px;
+}
+.horizontal
+{
+    height: 75px;
+    width:400px;
+    background-color: rgba(240, 239, 239, 0.84);
+    float:right;
+    margin-right: 230px;
+    margin-top: 230px;
+    border-radius: 25px;
+}
+a
+{
+    color: #830909;
+    padding: 10px;
+    margin-top: 11px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    
+}
+
+.notice-link
+{
+    color: aliceblue;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 180px;
+    margin-left: 250px;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 480px) {
+
+    body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 23px;
+        padding: 20px 15px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .horizontal {
+        width: 90%;
+        max-width: 400px;
+        min-height: 65px;
+        height: auto;
+        margin: 100px auto 0;
+        float: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 20px;
+    }
+
+    .horizontal a {
+        font-size: 15px;
+        padding: 8px;
+        margin: 0;
+        white-space: nowrap;
+    }
+}
+
+/* STUDENT LOGIN PAGE */
+
+.login-box {
+    color: #f5f5f5;
+    height: 300px;
+    width: 270px;
+    background-color: rgba(48, 8, 8, 0.7);
+    float: right;
+    border-radius: 25px;
+    margin-right: 180px;
+    margin-top: 130px;
+    padding: 15px;
+}
+
+/* Mobile Login */
+@media screen and (max-width: 480px) {
+
+    .login-box {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        min-height: 300px;
+        float: none;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .login-box input {
+        max-width: 100%;
+    }
+
+    .login-box button {
+        padding: 10px 25px;
+    }
+}
+
+/* SYLLABUS PAGE MOBILE RESPONSIVENESS */
+@media screen and (max-width: 480px) {
+
+    .syllabus-link {
+        display: block;
+        width: 90%;
+        max-width: 350px;
+        margin: 80px auto;
+        padding: 15px;
+        font-size: 22px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+/* Syllabus desktop alignment */
+.syllabus-link {
+    display: block;
+    width: fit-content;
+    margin: 180px auto;
+    text-align: center;
+}
+
+
+/* Timetable desktop alignment */
+.timetable-link {
+    display: block;
+    width: fit-content;
+    margin: 180px auto;
+    text-align: center;
+}
+
+/* Timetable mobile responsiveness */
+@media screen and (max-width: 480px) {
+    .timetable-link {
+        display: block;
+        width: 90%;
+        max-width: 350px;
+        margin: 80px auto;
+        padding: 15px;
+        font-size: 22px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+
+/* Notice desktop alignment */
+.notice-heading {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.notice-page-link {
+    display: block;
+    width: fit-content;
+    margin: 80px auto;
+    text-align: center;
+}
+
+/* Notice mobile responsiveness */
+@media screen and (max-width: 480px) {
+
+    .notice-heading {
+        font-size: 23px;
+        padding: 15px;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    .notice-page-link {
+        display: block;
+        width: 90%;
+        max-width: 350px;
+        margin: 50px auto;
+        padding: 15px;
+        font-size: 22px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+.notice-card {
+    background: white;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+.notice-card h2 {
+    color: #130D3B;
+    margin-bottom: 15px;
+    font-size: 21px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.notice-content {
+    white-space: normal;
+    line-height: 1.7;
+    margin: 20px 0;
+    text-align: center;
+    color: #333;
+}
+
+.notice-date {
+    color: gray;
+    font-size: 13px;
+}
+.notice-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0b0101;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.timetable-container {
+    margin: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    overflow-x: auto;
+}
+
+.timetable-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.timetable-table th,
+.timetable-table td {
+    border: 1px solid #ddd;
+    padding: 14px;
+}
+
+.timetable-table th {
+    background-color: #292044;
+    color: white;
+}
+
+.timetable-table td {
+    color: #333;
+}

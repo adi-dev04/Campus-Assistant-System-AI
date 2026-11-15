@@ -1,0 +1,43 @@
+
+{% load static %}
+<html>
+<head>
+    <title>Student Notice - Campus System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body>
+
+    <h1 class="notice-heading">College Notices</h1>
+
+    {% for notice in notices %}
+
+        <div class="notice-card">
+
+            <h2>{{ notice.title }}</h2>
+
+            <p class="notice-date">
+                Uploaded: {{ notice.uploaded_at|date:"d M Y" }}
+            </p>
+
+            <div class="notice-content">
+                {{ notice.extracted_text|linebreaksbr }}
+            </div>
+
+            <a href="{{ notice.file.url }}" target="_blank"
+               class="notice-link notice-page-link">
+                View Original PDF ➤
+            </a>
+
+        </div>
+
+    {% empty %}
+
+        <p>No notices available.</p>
+
+    {% endfor %}
+
+</body>
+</html>
+```

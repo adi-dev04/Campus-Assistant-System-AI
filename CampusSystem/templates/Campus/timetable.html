@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+<head>
+    <title>Student Timetable - Campus System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body>
+
+    <h1 class="notice-heading">CLASS TIMETABLE</h1>
+
+    {% for item in timetable_data %}
+
+        <div class="timetable-container">
+
+            <h2>{{ item.title }}</h2>
+
+            <table class="timetable-table">
+
+                <thead>
+                    <tr>
+                        <th>TIME</th>
+                        <th>MONDAY</th>
+                        <th>TUESDAY</th>
+                        <th>WEDNESDAY</th>
+                        <th>THURSDAY</th>
+                        <th>FRIDAY</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in item.rows %}
+                        <tr>
+                            {% for cell in row %}
+                            <td>{{ cell }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="6">No timetable data found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+            <a href="{{ item.file }}" target="_blank">
+                View Original PDF ➤
+            </a>
+
+        </div>
+
+    {% empty %}
+        <p>No timetable available.</p>
+    {% endfor %}
+
+</body>
+</html>

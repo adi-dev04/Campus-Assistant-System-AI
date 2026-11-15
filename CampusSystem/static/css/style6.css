@@ -1,0 +1,153 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F4F8;
+}
+
+/* Header */
+.manage-header {
+    background-color: #740d0d;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.manage-header h1 {
+    margin-bottom: 10px;
+}
+
+.manage-header p {
+    font-size: 15px;
+}
+
+/* Main container */
+.manage-container {
+    width: 90%;
+    margin: 50px auto;
+}
+
+/* Content grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Content cards */
+.content-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.content-card h2 {
+    color: #130D3B;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.content-card p {
+    color: #555;
+    margin-top: 12px;
+}
+
+/* Category labels */
+.category {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.syllabus {
+    background-color: #e8e5ff;
+    color: #4438A8;
+}
+
+.timetable {
+    background-color: #e0f2e9;
+    color: #187044;
+}
+
+.notice {
+    background-color: #ffe5e5;
+    color: #9b1717;
+}
+
+/* Buttons */
+.card-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.card-buttons button {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: rgb(255, 252, 252);
+}
+
+.view-btn {
+    background-color: #4438A8;
+    color: white;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    background-color: #811313;
+}
+
+.view-btn:hover {
+    background-color: #302477;
+}
+
+.delete-btn:hover {
+    background-color: #bf1616;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .manage-header {
+        padding: 22px 12px;
+    }
+
+    .manage-header h1 {
+        font-size: 23px;
+    }
+
+    .manage-container {
+        width: 90%;
+        margin: 25px auto;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .content-card {
+        padding: 22px;
+    }
+}

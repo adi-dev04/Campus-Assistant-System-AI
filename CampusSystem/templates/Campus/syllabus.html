@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+<head>
+    <title>Student Syllabus - Campus System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body>
+
+    <h1 class="notice-heading">COURSE SYLLABUS</h1>
+
+    {% for syllabu in syllabus %}
+
+        <div class="notice-card">
+
+            <h2>{{ syllabu.title }}</h2>
+
+            <p class="notice-date">
+                Uploaded: {{ syllabu.uploaded_at|date:"d M Y" }}
+            </p>
+
+            <div class="notice-content">
+                {{ syllabu.extracted_text|linebreaksbr }}
+            </div>
+
+            <a href="{{ syllabu.file.url }}"
+               target="_blank"
+               class="notice-link syllabus-link">
+                View Original PDF ➤
+            </a>
+
+        </div>
+
+    {% empty %}
+
+        <p>No syllabus available.</p>
+
+    {% endfor %}
+
+</body>
+</html>

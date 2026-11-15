@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+    <title>Technokraft Training and Solutions</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Technokraft Training and Solutions System</h1>
+
+    <div class="horizontal">
+        <a href="{% url 'login' %}">Student Login</a>
+        |
+        <a href="{% url 'tlogin' %}">Teacher Login</a>
+    </div>
+</body>
+</html>

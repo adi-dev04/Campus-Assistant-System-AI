@@ -1,0 +1,46 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Syllabus</title>
+    <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header class="teacher-header">
+        <h1>UPLOAD SYLLABUS</h1>
+    </header>
+
+    <div class="upload-container">
+
+        <form method="POST" enctype="multipart/form-data" action="{% url 'upload_pdf' %}">
+
+            {% csrf_token %}
+
+            <label>Document Title</label><br>
+            <input type="text" name="title" required><br>
+
+            <label>Subject</label><br>
+            <input type="text" name="subject" required><br>
+
+            <label>Semester</label><br>
+            <input type="text" name="semester" required><br>
+
+            <label>Academic Year</label><br>
+            <input type="text" name="academic_year" required><br>
+
+            <label>Select PDF</label><br>
+            <input type="file" name="file" accept=".pdf" required><br>
+
+            <button type="submit">Upload Syllabus</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

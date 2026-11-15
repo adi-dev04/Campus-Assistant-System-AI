@@ -1,0 +1,67 @@
+
+{% load static %}
+<html>
+<head>
+    <title>Student Portal - Campus System</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <p>YOUR DASHBOARD</p>
+            <h1>Welcome Back, {{ request.POST.username }}</h1>
+
+            <div class="container2">
+                <div class="grid1">
+                    <h2>ATTENDANCE</h2>
+                    <div class="circle">
+                        <span>82%</span>
+                    </div>
+                </div>
+
+                <div class="grid2">
+                    <h2>STUDY MATERIAL</h2>
+                    <a href="{% url 'student_documents' %}" class="link">
+                        You Can Find Your Notes And Summaries Here
+                    </a>
+                </div>
+
+                <div class="grid3">
+                    <h2>QUIZ</h2>
+                    <a href="{% url 'quiz' %}" class="link">Test Your Abilities</a>
+                </div>
+            </div>
+
+            <div class="grid4">
+                <h3>Upcoming Events</h3>
+                <hr>
+                <ul>
+                    <li>PYTHON ASSESSMENT <p>12 NOV</p></li>
+                    <li>AI/ML WORKSHOP <p>11 DEC</p></li>
+                    <li>HACKATHON <p>25 DEC</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="logo">
+                <img src="{% static 'logo.jpeg' %}" alt="Logo" height="150px" width="150px">
+            </div>
+            <hr>
+
+            <ol>
+                <br>
+                <li><a href="{% url 'notice' %}">Notice</a></li>
+                <li><a href="{% url 'syllabus' %}">Syllabus</a></li>
+                <li><a href="{% url 'timetable' %}">Timetable</a></li>
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+```
